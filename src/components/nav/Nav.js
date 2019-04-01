@@ -5,7 +5,7 @@ class Nav extends Component {
   render() {
     return (
       <nav style={{ opacity: 0.7 }} className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#top">Home</a>
+        <a className="navbar-brand" href="#top"><span class="icon-home"></span> Home</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
