@@ -44,4 +44,12 @@
   font-size: 1.8em; 
   }
 }
+@media(max-width:400px){
+  #foter>ul>li>a{
+  font-size: 0.9em; 
+  }
+  #foter>ul>li>a>span{
+  margin-left: 8%;
+}
+}
 
