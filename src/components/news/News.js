@@ -43,13 +43,13 @@ class News extends Component {
             <img
               id='imgen'
               style={{
-                height: 200, width: '60%', margin: 'auto', display: 'block'
+                height: 200
               }}
               src={n.img}
               alt="Card"
             />
             <div className="card-body">
-              <p className="card-text">{n.body}</p>
+              <p id="cuerpo" className="card-text">{n.body}</p>
             </div>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">{fecha2}</li>
