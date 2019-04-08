@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-
+import Fade from 'react-reveal/Fade';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import Tarea from '../tarea/Tarea';
+
 
 import './news.css';
 
@@ -39,32 +48,36 @@ class News extends Component {
       const fecha2 = fecha.slice(0, 10);
       return (
         <div key={n.id} id="noticias">
-          <div className="card mb-3">
-            <h3 className="card-header">{n.title}</h3>
-            <div className="card-body">
-              <h5 className="card-title">{n.autor}</h5>
-              <h6 className="card-subtitle text-muted">{n.source}</h6>
-            </div>
-            <img
-              id='imgen'
-              style={{
-                height: 200
-              }}
-              src={n.img}
-              alt="Card"
-            />
-            <div className="card-body">
-              <p id="cuerpo" className="card-text">{n.body}</p>
-            </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">{fecha2}</li>
-            </ul>
-          </div>
+          <Card id='carta' style={{ marginRight: 10, maxWidth: 400 }}>
+            <CardActionArea>
+              <CardMedia
+                style={{ height: 140 }}
+                image={n.img}
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {n.title}
+                </Typography>
+                <Typography component="p">
+                  {n.body}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
         </div>
       );
     });
     return (
-      <div id="contenedor">
+      <Fade><div id="contenedor">
         {this.state.hide && (
           <blockquote id='blockCont' className="blockquote text-center">
             <div className="jumbotron">
@@ -77,8 +90,8 @@ class News extends Component {
             </div>
             <Tabs id="taba" style={{ color: 'white', width: '80%', margin: 'auto' }} defaultActiveKey="1">
               <TabPane tab="HOME" key="1"><div style={{ backgroundColor: 'black' }} className="jumbotron">
-                <h1 style={{ color: 'white' }} className="display-3"><strong style={{color: 'orange' }}>W</strong>orks</h1>
-               <Tarea></Tarea>
+                <h1 style={{ color: 'white' }} className="display-3"><strong style={{ color: 'orange' }}>W</strong>orks</h1>
+                <Tarea></Tarea>
               </div>
               </TabPane>
               <TabPane tab="ABOUT" key="2"><div style={{ backgroundColor: 'black' }} className="jumbotron">
@@ -121,10 +134,11 @@ class News extends Component {
               className="btn btn-warning btn-lg"
             >
               Back
-          </a>
+            </a>
           </div>
         )}
-      </div>
+      </div></Fade>
+      
     );
   }
 }

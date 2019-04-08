@@ -7,7 +7,6 @@ class TodoExample extends React.Component {
   constructor(props) {
     super(props);
     this.groupProps = {
-      appear: true,
       enter: true,
       exit: true,
     };
@@ -57,11 +56,11 @@ class TodoExample extends React.Component {
                 <div className="card">
                   <div style={{ color: 'black' }} className="card-body justify-content-between">
                     {item.text}
-                    <button
+                    <button style={{ marginLeft: '20%' }}
                       data-id={item.id}
                       onClick={this.remove}
                       type="button"
-                      className="close"
+                      className="btn btn-warning"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>

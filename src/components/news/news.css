@@ -8,14 +8,30 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
+#carta{
+width: 100%;
+margin-left: 2%;
+}
+#contcard{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-right: 20px;
+  padding: 5px;
+}
 .ant-tabs-ink-bar{
  background-color: black;
 }
 .ant-tabs-nav .ant-tabs-tab:hover{
-  color: black;
+  color: orange;
+}
+.ant-tabs-nav-container{
+  background-color: black;
+  opacity: 0.6;
 }
 .ant-tabs-nav .ant-tabs-tab-active {
-     color:black;
+     color:orange;
    
 }
 #noticias{
@@ -98,6 +114,10 @@
    margin-left: 5%;
    
  }
+ #carta{
+width: 100%;
+margin-left: 12%;
+}
  
 }
 @media(min-width:1025px){
@@ -107,6 +127,10 @@
  #noticia{
    width: 50%;
  }
+  #carta{
+width: 100%;
+margin-left: 27%;
+}
  
  
 }
